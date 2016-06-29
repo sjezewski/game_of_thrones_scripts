@@ -79,6 +79,8 @@ def normalize_text(text)
 	text.gsub!("[", "<open-brack> ")
 	text.gsub!("]", " <close-brack>")
 	text.gsub!("\u2026", "<ellipsis>")
+	text.gsub!("\u201C", "<boquote>")
+	text.gsub!("\u201D", "<eoquote>")
 	text
 end
 
