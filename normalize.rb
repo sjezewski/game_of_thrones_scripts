@@ -172,7 +172,6 @@ File.open("ptb.test.txt", "w") << episodes[0..(test-1)].join("<eoepisode>")
 File.open("ptb.valid.txt", "w") << episodes[test..(valid-1)].join("<eoepisode>")
 File.open("ptb.train.txt", "w") << episodes[valid..-1].join("<eoepisode>")
 
-%x`rm all.txt`
 %x`tar -c *.txt > GoT-scripts.tar`
 %x`gzip GoT-scripts.tar`
 
