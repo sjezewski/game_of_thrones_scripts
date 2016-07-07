@@ -56,7 +56,7 @@ def parse_character_line(line)
 
 	text = normalize_text(text)
 
-	return "<boname> " + name + " <eoname> " + text.split().join(" ")
+	return " <boname> " + name + " <eoname> " + text.split().join(" ")
 end
 
 def normalize_text(text)
@@ -79,8 +79,8 @@ def normalize_text(text)
 	text.gsub!("[", "<open-brack> ")
 	text.gsub!("]", " <close-brack>")
 	text.gsub!("\u2026", "<ellipsis>")
-	text.gsub!("\u201C", "<boquote>")
-	text.gsub!("\u201D", "<eoquote>")
+	text.gsub!("\u201c", "<boquote>")
+	text.gsub!("\u201d", "<eoquote>")
 	text
 end
 
@@ -130,7 +130,7 @@ def parse_exposition_line(line)
 	end
 
 	text = normalize_text(text)
-	["<open-exp>", text.split().join(" "), "<close-exp>"].join(" ")
+	[" <open-exp>", text.split().join(" "), "<close-exp>"].join(" ")
 end
 
 def normalize_file(raw_file_name)
